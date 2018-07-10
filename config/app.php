@@ -146,14 +146,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        \SocialiteProviders\Manager\ServiceProvider::class,
-        Plokko\LaravelFirebase\ServiceProvider::class,
-        Ixudra\Curl\CurlServiceProvider::class,
-
-        //Laravel\Socialite\SocialiteServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
         /*
          * Package Service Providers...
-
          */
 
         /*
@@ -213,9 +208,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'LaravelFirebase' => Plokko\LaravelFirebase\Facades\LaravelFirebase::class,
-        'Curl'          => Ixudra\Curl\Facades\Curl::class,
 
     ],
 

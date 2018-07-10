@@ -26,6 +26,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/graficaspie', 'GraficasPieController@index')->name('graficaspie');
+Route::get('/reportes', 'ReportesController@index')->name('reportes');
 Route::post('/guardar', 'HomeController@guardar');
 Route::get('/redirect', 'SocialController@redirect');
 Route::get('/callback', 'SocialController@callback');

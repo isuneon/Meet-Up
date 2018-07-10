@@ -34,7 +34,6 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-
     'meetup' => [
     'client_id' => env('MEETUP_KEY'),
     'client_secret' => env('MEETUP_SECRET'),
@@ -53,4 +52,5 @@ return [
     'secret' => 'lPuKSo17mh2w86eAX6S7axSHidpPpGlpo3mC97Ua',
     'storage_bucket' => 'prueba2-61307.appspot.com', // Only used for JS integration
 ]
+
 ];

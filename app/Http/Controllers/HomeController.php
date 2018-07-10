@@ -7,8 +7,10 @@ use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Database;
 use GuzzleHttp\Client;
+use Socialite;
 use DMS\Service\Meetup\MeetupKeyAuthClient;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 
 class HomeController extends Controller
@@ -18,10 +20,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -30,77 +32,82 @@ class HomeController extends Controller
      */
     public function index()
     {
-                   // traigo los datos integrantes de los eventos
-                 $clientmet = MeetupKeyAuthClient::factory(array('key' => '7f22671f823125e282173341e6c7a54'));
-
-                 $responsem = $clientmet->getRsvps(array('event_id' => '249390499'));
-                          
 
 
 
 
-            //$client = new Client();
-            // Base URI is used with relative requests
-             $client = new Client();
-             //$grupo = $client->get('');
-             //dd($grupo);
-
-            $request = $client->get('https://prueba2-61307.firebaseio.com/users.json?print=pretty');
-                
-            $response = $request->getBody()->getContents();
-            $array = json_decode($response, true);
-            $holis = $array['1']['member_id'];
-            //dd($holis)
-
-            
-
-           
 
 
 
 
-        //$serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/prueba2-61307-firebase-adminsdk-9tmif-9183dc24b8.json');
-        //$firebase = (new Factory)
-        //->withServiceAccount($serviceAccount)
-        // ->withDatabaseUri('https://prueba2-61307.firebaseio.com/')->create();;
-        //$holi = $firebase->getDatabase();
-        //$holis = $holi->getReference('users/1/member_id');
-        //$snapshot = $holis->getSnapshot();
-        //$value = $holis;
+
+
+
+
+
+
+
+
+                       // traigo los datos integrantes de los eventos
+       //$clientmet = MeetupKeyAuthClient::factory(array('key' => 'd16626276451124e87b2a4e254038'));
+
+       //$responsemet = $clientmet->getRsvps(array('event_id' => '249390499'));
+       $client = new Client();
+       $request = $client->get('https://meetup-d3c98.firebaseio.com/users.json?print=pretty');
+       $response = $request->getBody()->getContents();
+        $array = json_decode($response, true);
+
+        //$user = Socialite::driver('meetup')->stateless()->user();
+        //$holis = $responsemet;
+        $user = Socialite::driver('meetup')->stateless()->user();
+        $the_user = $user->id;
         //dd($holis);
-        //$miembro = $value->member_id;
-         //dd($holis);
-         //$auth = $firebase->getAuth();
-         //$users = $auth->listUsers($defaultMaxResults = 1000, $defaultBatchSize = 1000);
-         //$hola = $auth->getUser('some-uid');
-         //dd(auth()->user()->name);
         return view('home',[
-            'holis' => $holis,
-            'array' => $array,
-            'responsem' => $responsem
-            //'hola'  => $hola
-            //'miembro' => $miembro
-            
-        ]);
+                    //'holis' => $holis,
+                    'array' => $array,
+                    'the_user'=> $the_user 
+                   ]);
     }
 
-    public function guardar() {
-         
-       $registro = new Registro();
-       $registro->indicador = $request->indicador;
 
-    //$registro->save();
+
+
+    public function guardar(Request $request) 
+    {
+     //return  $_POST['data'];
+    
+
+
+
+        $data = json_encode(
+         array( $request->all())
+         );
         //dd($data);
-
-
+        
 
         $client = new Client([
-    'headers' => [ 'Content-Type' => 'application/json' ]]);
+        'headers' => [ 'Content-Type' => 'application/json' ]]);
 
-        $guardar = $client->post('https://pruebameetup.firebaseio.com/grupos.json?',
+        $guardar = $client->post('https://prueba2-61307.firebaseio.com/eventos.json?',
         ['body' => $data]);
-    //return $guardar;
-        //return "Hello World!";
+    
+        return "se guardo con exito la informaicion";
+    }
+    public function datos() 
+    {
+       
+
+        $miembro = '254635625';
+                
+            $api_key = '7f22671f823125e282173341e6c7a54';
+            $connection = new MeetupKeyAuthConnection($api_key);
+            $m = new MeetupEvents($connection); 
+            $events = $m->getEvents( array( 'member_id' => $miembro   ) );
+            $evento = $events;
+
+        $g = new MeetupGroups($connection);
+        $groups = $g->getGroups( array( 'member_id' => $miembro ));
+        $grupos = $groups;
     }
 
 

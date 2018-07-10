@@ -22,7 +22,7 @@ define('LARAVEL_START', microtime(true));
 */
 
 require __DIR__.'/../vendor/autoload.php';
-
+require_once __DIR__. '/../vendor/Meetup-API-client/Meetup.php';
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
@@ -49,7 +49,6 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
-
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
@@ -59,6 +58,3 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
-
-
-require_once  __DIR__.'/../vendor/Meetup-API-client/Meetup.php';

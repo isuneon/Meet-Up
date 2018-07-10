@@ -1,1 +1,22 @@
-@import "accordion.css";@import "alert.css";@import "blog.css";@import "countdown.css";@import "facts.css";@import "form-style.css";@import "featured-box.css";@import "footer.css";@import "header.css";@import "page-title.css";@import "portfolio.css";@import "promo-box.css";@import "pricing.css";@import "slider.css";@import "tabs.css";@import "team.css";@import "testimonial.css"
+/*-----------------------------------------------------------------------------------
+Shortcodes style
+-----------------------------------------------------------------------------------*/
+
+@import url("accordion.css");
+@import url("alert.css");
+@import url("blog.css");
+@import url("countdown.css");
+@import url("facts.css");
+@import url("form-style.css");
+@import url("featured-box.css");
+@import url("footer.css");
+@import url("header.css");
+@import url("page-title.css");
+@import url("portfolio.css");
+@import url("promo-box.css");
+@import url("pricing.css");
+@import url("slider.css");
+@import url("tabs.css");
+@import url("team.css");
+@import url("testimonial.css");
+

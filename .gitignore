@@ -1,3 +1,10 @@
-# Add any directories, files, or patterns you don't want to be tracked by version control
-vendor/
-storage
+/node_modules
+storage/
+/vendor
+/.idea
+/.vscode
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log

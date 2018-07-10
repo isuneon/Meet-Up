@@ -12,13 +12,11 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $listen = [
+   protected $listen = [
     \SocialiteProviders\Manager\SocialiteWasCalled::class => [
         'SocialiteProviders\Meetup\MeetupExtendSocialite@handle'
     ],
-    
-];
-
+    ];
 
     /**
      * Register any events for your application.

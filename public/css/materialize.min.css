@@ -2461,8 +2461,8 @@ span.badge {
 
 @font-face {
   font-family: "Material-Design-Icons";
-  src: url("../font/material-design-icons/Material-Design-Icons0ae10ae1.eot?-g7cqhn");
-  src: url("../font/material-design-icons/Material-Design-Iconsd41dd41d.eot?#iefix-g7cqhn") format("embedded-opentype"), url("../font/material-design-icons/Material-Design-Icons0ae10ae1.woff?-g7cqhn") format("woff"), url("../font/material-design-icons/Material-Design-Icons0ae10ae1.ttf?-g7cqhn") format("truetype"), url("../font/material-design-icons/Material-Design-Icons0ae10ae1.svg?-g7cqhn#Material-Design-Icons") format("svg");
+  src: url("../font/material-design-icons/Material-Design-Icons0ae1.eot?-g7cqhn");
+  src: url("../font/material-design-icons/Material-Design-Iconsd41d.eot?#iefix-g7cqhn") format("embedded-opentype"), url("../font/material-design-icons/Material-Design-Icons0ae1.woff?-g7cqhn") format("woff"), url("../font/material-design-icons/Material-Design-Icons0ae1.ttf?-g7cqhn") format("truetype"), url("../font/material-design-icons/Material-Design-Icons0ae1.svg?-g7cqhn#Material-Design-Icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -6177,7 +6177,7 @@ form p:last-child {
 /* Remove default checkbox */
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
   position: absolute;
-  left: -9999px; }
+  }
 
 [type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
   position: relative;

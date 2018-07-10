@@ -22,112 +22,48 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="shortcut icon" href="assets/img/ico/favicon.png">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/uniform.default.css" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
-        <link href="css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/jqvmap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/tasks.css" rel="stylesheet" type="text/css"/>
-        <link href="css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
-        <link href="css/plugins.css" rel="stylesheet" type="text/css"/>
-        <link href="css/layout.css" rel="stylesheet" type="text/css"/>
-        <link href="css/blue.css" rel="stylesheet" type="text/css" id="style_color"/>
-        <link href="css/custom.css" rel="stylesheet" type="text/css"/>
+       
+        <!--  favicon -->
+        <link rel="shortcut icon" href="assets/img/ico/favicon.png">
+        <!--  apple-touch-icon -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
+        <!-- FontAwesome CSS -->
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+        <!-- Material Icons CSS -->
+        <link href="{{ asset('css/material-icons.css') }}" rel="stylesheet">
+        <!-- animate CSS -->
+        <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
+         <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
+         <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
+         <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet">
+        <!-- materialize -->
+        <link href="{{ asset('css/materialize.min.css') }}" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- shortcodes -->
+        <link href="{{ asset('css/shortcodes.css') }}" rel="stylesheet">
+        <!-- Style CSS -->
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
-<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-logo page-sidebar-fixed page-container-bg-solid page-footer-fixed">
-<div class="page-container">
-        <div class="page-sidebar-wrapper">
-            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-            <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-            <div class="page-sidebar navbar-collapse collapse">
-                @include('partials.sidebar')
-                <!-- END SIDEBAR MENU -->
-            </div>
-        </div>
-        
-    <div class="page-content-wrapper">
-            <div class="page-content">
-                <!-- BEGIN PAGE BREADCRUMB -->
-                <!-- END PAGE BREADCRUMB -->
-                <!-- BEGIN PAGE CONTENT INNER -->
-
-                <!-- BEGIN CONTENIDO PRINCIPAL -->
-                    <section class="content"  id="contenido_principal">
+<body id="top" data-spy="scroll" data-target="#materialize-menu" data-offset="100">
+                    <section>
                         @yield('content')
                     </section>
-                <!-- END  CONTENIDO PRINCIPAL -->
-                <!-- END PAGE CONTENT INNER -->
-            </div>
-        </div>
+             
+        
     
-    </div>
-
-    <footer>
-     <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/jquery-migrate.min.js" type="text/javascript"></script>
-    <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-    <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <script src="js/jquery.blockui.min.js" type="text/javascript"></script>
-    <script src="js/jquery.cokie.min.js" type="text/javascript"></script>
-    <script src="js/jquery.uniform.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap-switch.min.js" type="text/javascript"></script>
-    <!-- END CORE PLUGINS -->
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-    
-    <!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
-    <script src="js/morris.min.js" type="text/javascript"></script>
-    <script src="js/raphael-min.js" type="text/javascript"></script>
-    <script src="js/jquery.sparkline.min.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL PLUGINS -->
-    <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="js/metronic.js" type="text/javascript"></script>
-    <script src="js/layout.js" type="text/javascript"></script>
-    <script src="js/demo.js" type="text/javascript"></script>
-    <script src="js/index.js" type="text/javascript"></script>
-    <script src="js/tasks.js" type="text/javascript"></script>
-    <script src="js/charts-amcharts.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL SCRIPTS -->
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <script src="js/amcharts.js" type="text/javascript"></script>
-    <script src="js/serial.js" type="text/javascript"></script>
-    <script src="js/pie.js" type="text/javascript"></script>
-    <script src="js/radar.js" type="text/javascript"></script>
-    <script src="js/light.js" type="text/javascript"></script>
-    <script src="js/patterns.js" type="text/javascript"></script>
-    <script src="js/chalk.js" type="text/javascript"></script>
-    <script src="js/ammap.js" type="text/javascript"></script>
-    <script src="js/worldLow.js" type="text/javascript"></script>
-    <script src="js/amstock.js" type="text/javascript"></script>
-    <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/dataTables.responsive.min.js" type="text/javascript"></script>
-    <script src="js/responsive.bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/responsive.bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/funciones.js"> </script>
-
-
-    <script>
-    jQuery(document).ready(function() {    
-       Metronic.init(); // init metronic core componets
-       Layout.init(); // init layout
-       Demo.init(); // init demo features    
-       Index.init(); // init index page
-       Tasks.initDashboardWidget(); // init tash dashboard widget  
-    });
-    </script>
-
-    </footer>
-
-
-
-
+   
 </body>
+
+
+
+
+
+
 
 </html>
