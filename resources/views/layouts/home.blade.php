@@ -41,6 +41,7 @@
     
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">
         
 </head>
 
@@ -89,7 +90,9 @@
 
             <!-- Latest compiled and minified Locales -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
-
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+        
               
                 <script> 
                     (function ($) {
@@ -149,11 +152,66 @@
                 });
 
 
-                         $(document).ready(function() {
-    $('.hola').DataTable( {
-        "dom": '<"top"i>rt<"bottom"flp><"clear">'
-    } );
-} );
+                  $(document).ready(function (){
+   var table = $('.hola').DataTable({
+      
+      'columnDefs': [{
+         'targets': 0,
+         'searchable': true,
+         'orderable': true,
+         'className': 'dt-body-center',
+         'render': function (data, type, full, meta){
+             return '<input type="checkbox" name="id[]" value="' + $('<div/>').text(data).html() + '">';
+         }
+      }],
+      'order': [[1, 'asc']]
+   });
+
+   // Handle click on "Select all" control
+   $('·holaexample-select-all').on('click', function(){
+      // Get all rows with search applied
+      var rows = table.rows({ 'search': 'applied' }).nodes();
+      // Check/uncheck checkboxes for all rows in the table
+      $('input[type="checkbox"]', rows).prop('checked', this.checked);
+   });
+
+   // Handle click on checkbox to set state of "Select all" control
+   $('.hola tbody').on('change', 'input[type="checkbox"]', function(){
+      // If checkbox is not checked
+      if(!this.checked){
+         var el = $('#holaexampleple-select-all').get(0);
+         // If "Select all" control is checked and has 'indeterminate' property
+         if(el && el.checked && ('indeterminate' in el)){
+            // Set visual state of "Select all" control
+            // as 'indeterminate'
+            el.indeterminate = true;
+         }
+      }
+   });
+
+   // Handle form submission event
+   $('#frm-example').on('submit', function(e){
+      var form = this;
+
+      // Iterate over all checkboxes in the table
+      table.$('input[type="checkbox"]').each(function(){
+         // If checkbox doesn't exist in DOM
+         if(!$.contains(document, this)){
+            // If checkbox is checked
+            if(this.checked){
+               // Create a hidden element
+               $(form).append(
+                  $('<input>')
+                     .attr('type', 'hidden')
+                     .attr('name', this.name)
+                     .val(this.value)
+               );
+            }
+         }
+      });
+   });
+
+});
                 </script>
     </footer>
 </html>

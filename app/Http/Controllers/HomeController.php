@@ -88,7 +88,7 @@ class HomeController extends Controller
         $client = new Client([
         'headers' => [ 'Content-Type' => 'application/json' ]]);
 
-        $guardar = $client->post('https://prueba2-61307.firebaseio.com/eventos.json?',
+        $guardar = $client->post('https://meetup-d3c98.firebaseio.com/eventos.json?',
         ['body' => $data]);
     
         return "se guardo con exito la informaicion";

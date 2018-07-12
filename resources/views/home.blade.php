@@ -535,47 +535,51 @@
                                                                                     <?php //echo(json_encode($responseItem));  ?>
                                                                                 <input type="text" name="miembrosdeevento" id="miembrosdeevento" value="{{ $responseItem['member']['name'] }}, ID:{{ $responseItem['member']['member_id'] }}" hidden="true"/>
                                                                                 @endforeach   
+                                                                                        @foreach($holis as $responseItem)
                                                                                        
-                                                                          <!--   <label class="checkbox-inline">
+
+                                                                                       <table id="example" class="hola display select" cellspacing="0" width="100%">
+                                                                                       <thead>
+                                                                                          <tr>
+                                                                                             <th><input type="checkbox" name="select_all" value="1" id="holaexample-select-all"></th>
+                                                                                             <th>Name</th>
+                                                                                             <th>Position</th>
+                                                                                             <th>Office</th>
+                                                                                             <th>Extn.</th>
+                                                                                             <th>Start date</th>
+                                                                                             <th>Salary</th>
+                                                                                          </tr>
+                                                                                       </thead>
+                                                                                       <tbody>
+                                                                                       @foreach($holis as $responseItem)
+                                                                                           <tr>
+                                                                                               <th></th>
+                                                                                               <th>{{$responseItem['member']['name'] }}</th>
+                                                                                               <th>tecnico</th>
+                                                                                               <th>gob</th>
+                                                                                               <th>4564</th>
+                                                                                               <th>17082018</th>
+                                                                                               <th>445</th>
+                                                                                           </tr>
+                                                                                           @endforeach  
+                                                                                       </tbody>
+                                                                                       <tfoot>
+                                                                                          <tr>
+                                                                                             <th></th>
+                                                                                             <th>Name</th>
+                                                                                             <th>Position</th>
+                                                                                             <th>Office</th>
+                                                                                             <th>Extn.</th>
+                                                                                             <th>Start date</th>
+                                                                                             <th>Salary</th>
+                                                                                          </tr>
+                                                                                       </tfoot>
+                                                                                    </table>
+                                                                                    @endforeach
+                                                                                      <!--   <label class="checkbox-inline">
                                                                                      
                                                                                       <input type="checkbox" name="asistencia" id="asistencia" value=" {{ $responseItem['member']['name'] }} Asistió" style="    margin-left: 48px !important;"> Llegó</label> -->
-                                                                                      @foreach($holis as $responseItem)
-                                                                                      <table id="example" class="display hola" style="width:100%">
-                                                                                                <thead>
-                                                                                                    <tr>
-                                                                                                        <th>Name</th>
-                                                                                                        <th>Position</th>
-                                                                                                        <th>Office</th>
-                                                                                                        <th>Age</th>
-                                                                                                        <th>Start date</th>
-                                                                                                        <th>Salary</th>
-                                                                                                    </tr>
-                                                                                                </thead>
-                                                                                                  
-                                                                                                <tbody>
-                                                                                                    @foreach($holis as $responseItem)
-                                                                                                    <tr>
-                                                                                                        <td>{{ $responseItem['member']['name'] }}</td>
-                                                                                                        <td>System Architect</td>
-                                                                                                        <td>Edinburgh</td>
-                                                                                                        <td>61</td>
-                                                                                                        <td>2011/04/25</td>
-                                                                                                        <td>$320,800</td>
-                                                                                                    </tr>
-                                                                                                    @endforeach
-                                                                                                </tbody>   
-                                                                                        <tfoot>
-                                                                                            <tr>
-                                                                                                <th>Name</th>
-                                                                                                <th>Position</th>
-                                                                                                <th>Office</th>
-                                                                                                <th>Age</th>
-                                                                                                <th>Start date</th>
-                                                                                                <th>Salary</th>
-                                                                                            </tr>
-                                                                                        </tfoot>
-                                                                                    </table>
-                                                                                @endforeach
+                                                                                    
                                                          </div>
                                                         <!--  modal  y boton de guardar -->
                                                          <div class="col-md-6">
