@@ -28,9 +28,9 @@ class SocialController extends Controller
 
 
 
-            //$clientmet = MeetupKeyAuthClient::factory(array('key' => 'd16626276451124e87b2a4e254038'));
+        $clientmet = MeetupKeyAuthClient::factory(array('key' => 'd16626276451124e87b2a4e254038'));
 
-            //$responsemet = $clientmet->getRsvps(array('event_id' => '249390499'));
+        $responsemet = $clientmet->getRsvps(array('event_id' => '249390499'));
          
              $client = new Client();
              
@@ -43,11 +43,11 @@ class SocialController extends Controller
              $user = Socialite::driver('meetup')->stateless()->user();
             $the_user = $user->id;
             
-             //$holis = $responsemet;
+             $holis = $responsemet;
                 if ($the_user == $miembro   ) {
            //Auth::login($the_user);
           return view('home',[
-                    //'holis' => $holis,
+                    'holis' => $holis,
                     'array' => $array,
                     'the_user'=> $the_user
                    ]);

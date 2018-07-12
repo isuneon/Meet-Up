@@ -25,12 +25,14 @@ class GraficasPieController extends Controller
           foreach($array as $obj){
             $miembro = $obj;
             	foreach ($miembro as  $value) {
-            	 	$miembrosevento = json_encode($value->miembrosdeevento,JSON_NUMERIC_CHECK);
+            	 	$miembrosevento = $value->miembrosdeevento;
             	 	
             	 } 
 
              }
-             $asistentes = "$miembrosevento";
+             $asistentes = implode("name",$miembrosevento);
+
+              //return  implode("name",$asistentes);
 
              //dd($asistentes);
     	 return view('graficaspie', [

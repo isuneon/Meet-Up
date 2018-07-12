@@ -150,7 +150,7 @@
 
 
                          $(document).ready(function() {
-    $('#example').DataTable( {
+    $('.hola').DataTable( {
         "dom": '<"top"i>rt<"bottom"flp><"clear">'
     } );
 } );

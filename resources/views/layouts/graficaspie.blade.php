@@ -124,36 +124,36 @@
               },
               "dataProvider": [{
                   "date": "2012-01-01",
-                  "distance": {{$asistentes}},
+                  "members": "{{$asistentes}}",
                   "townName": "New York",
                   "townName2": "New York",
-                  "townSize": 25,
+                  //"townSize": 25,
                   "latitude": 40.71,
                   "duration": 408
               }, {
                   "date": "2012-01-02",
-                  "distance": 371,
+                  "members": 371,
                   "townName": "Washington",
-                  "townSize": 14,
+                  //"townSize": 14,
                   "latitude": 38.89,
                   "duration": 482
               }, {
                   "date": "2012-01-03",
-                  "distance": 433,
+                  "members": 433,
                   "townName": "Wilmington",
                   "townSize": 6,
                   "latitude": 34.22,
                   "duration": 562
               }, {
                   "date": "2012-01-04",
-                  "distance": 345,
+                  "members": 345,
                   "townName": "Jacksonville",
                   "townSize": 7,
                   "latitude": 30.35,
                   "duration": 379
               }, {
                   "date": "2012-01-05",
-                  "distance": 480,
+                  "members": 480,
                   "townName": "Miami",
                   "townName2": "Miami",
                   "townSize": 10,
@@ -161,21 +161,21 @@
                   "duration": 501
               }, {
                   "date": "2012-01-06",
-                  "distance": 386,
+                  "members": 386,
                   "townName": "Tallahassee",
                   "townSize": 7,
                   "latitude": 30.46,
                   "duration": 443
               }, {
                   "date": "2012-01-07",
-                  "distance": 348,
+                  "members": 348,
                   "townName": "New Orleans",
                   "townSize": 10,
                   "latitude": 29.94,
                   "duration": 405
               }, {
                   "date": "2012-01-08",
-                  "distance": 238,
+                  "members": 238,
                   "townName": "Houston",
                   "townName2": "Houston",
                   "townSize": 16,
@@ -183,7 +183,7 @@
                   "duration": 309
               }, {
                   "date": "2012-01-09",
-                  "distance": 218,
+                  "members": 218,
                   "townName": "Dalas",
                   "townSize": 17,
                   "latitude": 32.8,

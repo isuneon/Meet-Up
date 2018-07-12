@@ -8,12 +8,12 @@
             $api_key = 'd16626276451124e87b2a4e254038';
             $connection = new MeetupKeyAuthConnection($api_key);
             $m = new MeetupEvents($connection); 
-            $events = $m->getEvents( array( 'member_id' => '$the_user'   ) );
+            $events = $m->getEvents( array( 'member_id' => $miembro  ) );
             $evento = $events;
             //dd($evento);
             $a = new MeetupMembers($connection);
 
-            $members = $a->getMembers( array( 'member_id' => '$the_user' ));
+            $members = $a->getMembers( array( 'member_id' => $miembro ));
             //dd($members);
             $mi = new MeetupCheckins($connection);
             $checkins = $mi->getCheckins( array( 'event_id' => 'bqwjglyxkblb' ));
@@ -540,7 +540,7 @@
                                                                                      
                                                                                       <input type="checkbox" name="asistencia" id="asistencia" value=" {{ $responseItem['member']['name'] }} Asistió" style="    margin-left: 48px !important;"> Llegó</label> -->
                                                                                       @foreach($holis as $responseItem)
-                                                                                      <table id="example" class="display" style="width:100%">
+                                                                                      <table id="example" class="display hola" style="width:100%">
                                                                                                 <thead>
                                                                                                     <tr>
                                                                                                         <th>Name</th>
